@@ -1,0 +1,18 @@
+#match-game {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  max-width: 420px;
+  margin: auto;
+}
+
+.match-card {
+  padding: 20px;
+  cursor: pointer;
+  background: #e5e5e5;
+}
+
+.match-card.open { background: #fff1aa; }
+.match-card.right { background: #b3ffc0; }
+.match-card.wrong { background: #ffb6b6; }
+
