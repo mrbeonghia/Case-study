@@ -21,19 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3f7fe93-cead-4ee5-8ac0-d160b62e89e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory.css" beforeDir="false" afterPath="$PROJECT_DIR$/memory.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory.js" beforeDir="false" afterPath="$PROJECT_DIR$/memory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-1 - Copy 8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smiley-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/matching.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -63,7 +51,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603855733582</updated>
-      <workItem from="1603855735065" duration="8637000" />
+      <workItem from="1603855735065" duration="10563000" />
+      <workItem from="1603873057055" duration="3076000" />
     </task>
     <servers />
   </component>
@@ -80,5 +69,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603876403773">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603876403773" />
   </component>
 </project>
