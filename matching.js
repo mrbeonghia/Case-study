@@ -2,12 +2,12 @@ let match = {
   // (A) PROPERTIES
   // (A1) HTML ELEMENTS
   hWrap : 0, // HTML game wrapper
-  hCards : -1, // HTML cards
+  hCards : 0, // HTML cards
   // (A2) GAME SETTINGS
-  sets : 2, // Số cặp thẻ cần match
+  sets : 6, // Số cặp thẻ cần match
   hint : 1000, // Thời gian hiển thị các thẻ ko giống nhau
   // (A3) FLAGS
-  loaded : 0, // Total number of assets loaded
+  loaded : 0, // Tổng số thẻ đã load được
   moves : 0, // Tổng số nước đi
   last : -1, // Thẻ hiện tại đang mở
   grid : -1, // Current play grid
@@ -16,10 +16,10 @@ let match = {
 
   // (B) PRELOAD
   preload : function () {
-    // (B1) GET HTML GAME WRAPPER
+    // (B1) Tạo game wrapper
     match.hWrap = document.getElementById("match-game");
 
-    // (B2) PRELOAD IMAGES
+    // (B2) Tải trước hình ảnh
     for (let i=0; i<=match.sets; i++) {
       let img = document.createElement("img");
       img.onload = function(){
@@ -27,13 +27,13 @@ let match = {
         console.log(match.loaded);
         if (match.loaded === match.sets+1) { match.init(); }
       };
-      img.src = "smiley-"+i+".png";
+      img.src = "images/car-"+i+".png";
     }
   },
   
   // (C) INIT GAME
   init : function () {
-    // (C1) RESET
+    // (C1) Reset
     if (match.locked !== -1) {
       clearTimeout(match.locked);
       match.locked = -1;
@@ -65,20 +65,20 @@ let match = {
     for (let i=0; i<match.sets * 2; i++) {
       let card = document.createElement("div");
       card.className = "match-card";
-      card.innerHTML = `<img src='smiley-0.png' />`;
+      card.innerHTML = `<img src='images/car-0.png' />`;
       card.dataset.idx = i;
       card.onclick = match.open;
       match.hWrap.appendChild(card);
       match.hCards.push(card);
+      card.in
     }
   },
-  
-  // (D) Mở các thẻ
+  // (D) MỞ CÁC THẺ
   open : function () { if (match.locked === -1) {
     // (D1) Mở các thẻ đã chọn
     match.moves++;
     let idx = this.dataset.idx;
-    this.innerHTML = `<img src='smiley-${match.grid[idx]}.png'/>`;
+    this.innerHTML = `<img src='images/car-${match.grid[idx]}.png'/>`;
     this.classList.add("open");
     
     // (D2)
@@ -97,8 +97,7 @@ let match = {
         if (match.alike.length === match.sets * 2) {
           setTimeout(function() {
             alert("YOU WIN! TOTAL MOVES " + match.moves);
-          },200);
-
+          },100);
         }
       }
 
@@ -113,22 +112,24 @@ let match = {
     }
   }},
 
-  // (E) Đóng các thẻ mà ko match với nhau
-  close : function (a, b) {
-    a = match.hCards[a];
-    b = match.hCards[b];
-    a.classList.remove("wrong");
-    b.classList.remove("wrong");
-    a.classList.remove("open");
-    b.classList.remove("open");
-    a.innerHTML = `<img src='smiley-0.png'/>`;
-    b.innerHTML = `<img src='smiley-0.png'/>`;
-    a.onclick = match.open;
-    b.onclick = match.open;
+  // (E) ĐÓNG CÁC THẺ KO GIỐNG NHAU
+  close : function (card1, card2) {
+    card1 = match.hCards[card1];
+    card2 = match.hCards[card2];
+    card1.classList.remove("wrong");
+    card2.classList.remove("wrong");
+    card1.classList.remove("open");
+    card2.classList.remove("open");
+    card1.innerHTML = `<img src='images/car-0.png'/>`;
+    card2.innerHTML = `<img src='images/car-0.png'/>`;
+    card1.onclick = match.open;
+    card2.onclick = match.open;
     match.locked = -1;
     match.last = -1;
-  }
+  },
+
 };
+
 
 // (F) INIT GAME
 window.addEventListener("DOMContentLoaded", match.preload);
