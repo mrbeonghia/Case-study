@@ -3,6 +3,7 @@ let modal = document.querySelector('.modal-container');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let count = 0;
+let moves = 0;
 
 function shuffle(){
     allCards.forEach(card => {
@@ -15,7 +16,7 @@ function checkForMatch() {
     if (firstCard.id === secondCard.id){
         disableCards();
         count++;
-        console.log(count);
+        // console.log(count);
         checkWin();
         return;
     }
@@ -43,13 +44,17 @@ async function unflipCards(){
 function flipCard(){
     this.classList.toggle('flip');
 
+
     if(!hasFlippedCard){
         hasFlippedCard = true;
         firstCard = this;
+        moves = parseInt(moves+2);
         return;
     }
     secondCard = this;
     hasFlippedCard = false;
+    console.log(moves);
+
     checkForMatch();
 }
 
@@ -57,6 +62,7 @@ function checkWin(){
     if(count === 6){
         modal.style.display = "flex";
     }
+    document.getElementById('move').innerHTML = moves ;
 }
 
 function init(){

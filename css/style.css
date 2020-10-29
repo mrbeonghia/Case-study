@@ -23,7 +23,6 @@ body {
   padding: 4px;
 }
 .card {
-  background: #F5EEE0;
   display: flex;
   justify-content: space-around;
   align-items: center;
