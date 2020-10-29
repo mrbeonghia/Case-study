@@ -59,10 +59,10 @@ function checkWin(){
     }
 }
 
-function main(){
+function init(){
     shuffle(); //Randomize the order of cards
     modal.addEventListener('click', () => {location.reload()});//Click Listener for "Play Again" button
     allCards.forEach(card => card.addEventListener('click', flipCard));
 }
 
-main();
+init();
