@@ -16,7 +16,6 @@ function checkForMatch() {
     if (firstCard.id === secondCard.id){
         disableCards();
         count++;
-        // console.log(count);
         checkWin();
         return;
     }
@@ -66,9 +65,9 @@ function checkWin(){
 }
 
 function init(){
-    shuffle(); //Randomize the order of cards
-    modal.addEventListener('click', () => {location.reload()});//Click Listener for "Play Again" button
-    allCards.forEach(card => card.addEventListener('click', flipCard));
+    shuffle(); //Random các lá bài
+    modal.addEventListener('click', () => {location.reload()});//Click button "Play Again"
+    allCards.forEach(card => card.addEventListener('click', flipCard)); //Click lật bài
 }
 
 init();
