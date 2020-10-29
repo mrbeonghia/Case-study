@@ -4,11 +4,6 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 let count = 0;
 
-
-function sleep(ms){
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 function shuffle(){
     allCards.forEach(card => {
         let random = Math.floor(Math.random() * 12);
@@ -32,6 +27,10 @@ function disableCards(){
     secondCard.removeEventListener('click', flipCard);
     firstCard.classList.add('disabled');
     secondCard.classList.add('disabled');
+}
+
+function sleep(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function unflipCards(){
