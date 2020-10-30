@@ -1,6 +1,6 @@
 let allCards = document.querySelectorAll('.card');
 let modal = document.querySelector('.modal-container');
-let hasFlippedCard = false;
+let flippedCard = false;
 let firstCard, secondCard;
 let count = 0;
 let moves = 0;
@@ -13,7 +13,7 @@ function shuffle(){
 }
 
 function checkForMatch() {
-    if (firstCard.id === secondCard.id){
+    if ((firstCard.id === secondCard.id)&& (firstCard.style.order !== secondCard.style.order)){
         disableCards();
         count++;
         checkWin();
@@ -42,17 +42,14 @@ async function unflipCards(){
 
 function flipCard(){
     this.classList.toggle('flip');
-
-
-    if(!hasFlippedCard){
-        hasFlippedCard = true;
+    if(!flippedCard){
+        flippedCard = true;
         firstCard = this;
         moves = parseInt(moves+2);
         return;
     }
     secondCard = this;
-    hasFlippedCard = false;
-    console.log(moves);
+    flippedCard = false;
 
     checkForMatch();
 }
@@ -66,7 +63,7 @@ function checkWin(){
 
 function init(){
     shuffle(); //Random các lá bài
-    modal.addEventListener('click', () => {location.reload()});//Click button "Play Again"
+    modal.addEventListener('click', function (){location.reload()});//Click button "Play Again"
     allCards.forEach(card => card.addEventListener('click', flipCard)); //Click lật bài
 }
 
